@@ -1,1 +1,0 @@
-# che-editor-test
