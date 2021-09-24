@@ -1,6 +1,6 @@
 schemaVersion: 2.1.0
 metadata:
-  name: spring-petclinic-222
+  name: spring-petclinic-333
   namespace: admin-che
 projects:
   - git:
