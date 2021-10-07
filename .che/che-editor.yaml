@@ -125,7 +125,7 @@ components:
       app.kubernetes.io/part-of: che-theia.eclipse.org
   - name: remote-runtime-injector
     container:
-      image: 'quay.io/vzhukovs/che-theia-endpoint-runtime-binary:next'
+      image: 'quay.io/eclipse/che-theia-endpoint-runtime-binary:next'
       env:
         - name: PLUGIN_REMOTE_ENDPOINT_EXECUTABLE
           value: /remote-endpoint/plugin-remote-endpoint
