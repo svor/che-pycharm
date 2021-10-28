@@ -116,6 +116,8 @@ components:
         - /go/bin/che-machine-exec
         - '--url'
         - '0.0.0.0:3333'
+        - '--idle-timeout'
+        - '5m'
       memoryLimit: 128Mi
       memoryRequest: 32Mi
       cpuLimit: 500m
