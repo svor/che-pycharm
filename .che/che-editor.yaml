@@ -1,5 +1,60 @@
-reference: https://gist.githubusercontent.com/vzhukovs/de5dff53595c9bc951a8e09f6d144079/raw/9836d018eb9d73b7f54034d120b0747d8defbb19/devfile.yaml
-override:
-  containers:
-    - name: theia-ide
-      memoryLimit: 1280Mi
+inline:
+  schemaVersion: 2.1.0
+  metadata:
+    name: IntelliJ IDEA Community Edition
+  commands:
+    - id: init-container-command
+      apply:
+        component: che-code-injector
+  events:
+    preStart:
+      - init-container-command
+  components:
+    - name: che-code-runtime-description
+      container:
+        image: 'quay.io/devfile/universal-developer-image@sha256:d86650d33d98efff28e86766d9e16e6cd176af98410cc0fc7a83c1274a4c9592'
+        command:
+          - /projector-volume/entrypoint-volume.sh
+        env:
+          - name: PROJECTOR_ASSEMBLY_DIR
+            value: /projector-volume
+          - name: PROJECTOR_CONFIG_DIR
+            value: /home/user/.config
+        volumeMounts:
+          - name: projector-volume
+            path: /projector-volume
+        memoryLimit: 1024Mi
+        memoryRequest: 256Mi
+        cpuLimit: 500m
+        cpuRequest: 30m
+        endpoints:
+          - name: intellij
+            attributes:
+              type: main
+              cookiesAuthEnabled: true
+              discoverable: false
+              urlRewriteSupported: true
+            targetPort: 8887
+            exposure: public
+            path: /?backgroundColor=434343&wss
+            secure: false
+            protocol: https
+      attributes:
+        app.kubernetes.io/component: che-code-injector
+        app.kubernetes.io/part-of: che-code.eclipse.org
+    - name: projector-volume
+      volume: {}
+    - name: che-code-injector
+      container:
+        image: 'quay.io/vzhukovs/che-idea@sha256:934852c467b6ec070375390b680c1a4ea87f0635815b329cbbf29e7de4c9559e'
+        command: /projector/entrypoint-init-container.sh
+        env:
+          - name: PROJECTOR_VOLUME_MOUNT
+            value: /projector-volume
+        volumeMounts:
+          - name: projector-volume
+            path: /projector-volume
+        memoryLimit: 128Mi
+        memoryRequest: 32Mi
+        cpuLimit: 500m
+        cpuRequest: 30m
