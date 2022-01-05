@@ -2,4 +2,3 @@ schemaVersion: 2.1.0
 metadata:
   name: che-idea
   namespace: admin-che
-components: []
