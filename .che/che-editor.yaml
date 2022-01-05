@@ -17,12 +17,12 @@ inline:
           - /projector-volume/entrypoint-volume.sh
         env:
           - name: PROJECTOR_ASSEMBLY_DIR
-            value: /projector-volume
+            value: /projector
           - name: PROJECTOR_CONFIG_DIR
             value: /home/user/.config
         volumeMounts:
           - name: projector-volume
-            path: /projector-volume
+            path: /projector
         memoryLimit: 1024Mi
         memoryRequest: 256Mi
         cpuLimit: 500m
@@ -51,6 +51,8 @@ inline:
         env:
           - name: PROJECTOR_VOLUME_MOUNT
             value: /projector-volume
+          - name: PROJECTOR_ASSEMBLY_DIR
+            value: /projector
         volumeMounts:
           - name: projector-volume
             path: /projector-volume
