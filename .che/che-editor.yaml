@@ -46,7 +46,7 @@ inline:
       volume: {}
     - name: che-code-injector
       container:
-        image: 'quay.io/vzhukovs/che-idea@sha256:934852c467b6ec070375390b680c1a4ea87f0635815b329cbbf29e7de4c9559e'
+        image: 'quay.io/vzhukovs/che-idea:injector'
         command: ["/projector/entrypoint-init-container.sh"]
         env:
           - name: PROJECTOR_VOLUME_MOUNT
