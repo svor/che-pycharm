@@ -2,10 +2,4 @@ schemaVersion: 2.1.0
 metadata:
   name: che-idea
   namespace: admin-che
-projects:
-  - git:
-      checkoutFrom:
-        revision: devfilev2
-      remotes:
-        origin: 'https://github.com/che-samples/java-spring-petclinic.git'
-    name: java-spring-petclinic
+components: []
