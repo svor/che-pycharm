@@ -1,1 +1,5 @@
-reference: 'https://gist.github.com/vzhukovs/de5dff53595c9bc951a8e09f6d144079/raw/9c7eb4164350d976bb3b4fe9a4b3d7c0f10477f9/meta.yaml'
+reference: https://gist.github.com/vzhukovs/de5dff53595c9bc951a8e09f6d144079/raw/9836d018eb9d73b7f54034d120b0747d8defbb19/devfile.yaml
+override:
+  containers:
+    - name: theia-ide
+      memoryLimit: 1280Mi
