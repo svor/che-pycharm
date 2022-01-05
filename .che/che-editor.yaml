@@ -1,4 +1,4 @@
-reference: https://gist.github.com/vzhukovs/de5dff53595c9bc951a8e09f6d144079/raw/9836d018eb9d73b7f54034d120b0747d8defbb19/devfile.yaml
+reference: https://gist.githubusercontent.com/vzhukovs/de5dff53595c9bc951a8e09f6d144079/raw/9836d018eb9d73b7f54034d120b0747d8defbb19/devfile.yaml
 override:
   containers:
     - name: theia-ide
