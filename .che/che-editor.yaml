@@ -19,7 +19,7 @@ inline:
           - name: PROJECTOR_ASSEMBLY_DIR
             value: /projector
           - name: PROJECTOR_CONFIG_DIR
-            value: /home/user/.config
+            value: /home/user/.jetbrains
         volumeMounts:
           - name: projector-volume
             path: /projector
