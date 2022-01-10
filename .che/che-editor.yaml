@@ -38,7 +38,7 @@ inline:
             exposure: public
             path: '/?backgroundColor=434343&wss'
             secure: false
-            protocol: https
+            protocol: http
       attributes:
         app.kubernetes.io/component: che-code-injector
         app.kubernetes.io/part-of: che-code.eclipse.org
