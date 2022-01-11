@@ -46,7 +46,7 @@ inline:
       volume: {}
     - name: che-idea-injector
       container:
-        image: 'quay.io/che-incubator/che-idea:2020.3.4-next'
+        image: 'quay.io/che-incubator/che-pycharm:2020.3.4-next'
         command: ["/projector/entrypoint-init-container.sh"]
         env:
           - name: PROJECTOR_VOLUME_MOUNT
