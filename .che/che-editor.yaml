@@ -5,12 +5,12 @@ inline:
   commands:
     - id: init-container-command
       apply:
-        component: che-idea-injector
+        component: che-code-injector
   events:
     preStart:
       - init-container-command
   components:
-    - name: che-idea-runtime
+    - name: che-code-runtime-description
       container:
         image: 'quay.io/devfile/universal-developer-image:ubi8-eda6672'
         command: 
@@ -40,11 +40,11 @@ inline:
             secure: false
             protocol: http
       attributes:
-        app.kubernetes.io/component: che-idea-injector
-        app.kubernetes.io/part-of: che-idea.eclipse.org
+        app.kubernetes.io/component: che-code-injector
+        app.kubernetes.io/part-of: che-code.eclipse.org
     - name: projector-volume
       volume: {}
-    - name: che-idea-injector
+    - name: che-code-injector
       container:
         image: 'quay.io/che-incubator/che-idea:2020.3.4-next'
         command: ["/projector/entrypoint-init-container.sh"]
