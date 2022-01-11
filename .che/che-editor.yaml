@@ -5,7 +5,7 @@ inline:
   commands:
     - id: init-container-command
       apply:
-        component: che-code-injector
+        component: che-idea-injector
   events:
     preStart:
       - init-container-command
@@ -44,7 +44,7 @@ inline:
         app.kubernetes.io/part-of: che-code.eclipse.org
     - name: projector-volume
       volume: {}
-    - name: che-code-injector
+    - name: che-idea-injector
       container:
         image: 'quay.io/che-incubator/che-idea:2020.3.4-next'
         command: ["/projector/entrypoint-init-container.sh"]
