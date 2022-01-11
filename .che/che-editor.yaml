@@ -10,7 +10,7 @@ inline:
     preStart:
       - init-container-command
   components:
-    - name: che-code-runtime-description
+    - name: che-idea-runtime-description
       container:
         image: 'quay.io/devfile/universal-developer-image:ubi8-eda6672'
         command: 
