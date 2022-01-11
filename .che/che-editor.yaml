@@ -40,7 +40,7 @@ inline:
             secure: false
             protocol: http
       attributes:
-        app.kubernetes.io/component: che-code-injector
+        app.kubernetes.io/component: che-idea-injector
         app.kubernetes.io/part-of: che-code.eclipse.org
     - name: projector-volume
       volume: {}
